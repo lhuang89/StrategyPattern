@@ -1,9 +1,9 @@
 package proj.Algorithm;
 
-import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.List;
 
 public interface SortAlgorithm<T> {
-	public ArrayList<T> Sort(ArrayList<T> array,Comparator<T> comparator);
+	@SuppressWarnings("hiding")
+	public <T extends Comparable<? super T>> List<T> Sort(List<T> array);
 
 }

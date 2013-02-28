@@ -36,6 +36,6 @@ public void setSortStrategy(SortAlgorithm<Business> strategy)
 
 public void Sort(Comparator<Business> comparator)
 {
-	this.sort_strategy.Sort(business_dir, comparator);
+	this.sort_strategy.Sort(business_dir);
 }
 }

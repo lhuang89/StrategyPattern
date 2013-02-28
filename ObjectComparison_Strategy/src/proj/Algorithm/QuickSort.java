@@ -1,15 +1,43 @@
 package proj.Algorithm;
 
-import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
 
 public class QuickSort<T> implements SortAlgorithm<T> {
-
+	@SuppressWarnings("hiding")
 	@Override
-	public ArrayList<T> Sort(ArrayList<T> array, Comparator<T> comparator) {
-		// TODO Auto-generated method stub
-		// This is to test fetch of Egit
-		return null;
+	public <T extends Comparable<? super T>> List<T> Sort(
+			List<T> array) {
+		if(array.size()<=1)
+		{
+			return array;
+		}
+		
+		T pivot=array.get(0);
+		
+		List<T> less=new LinkedList<T>();
+		List<T> pivotList=new LinkedList<T>();
+		List<T> more=new LinkedList<T>();
+		
+		for (T i:array)
+		{
+			if(i.compareTo(pivot)<0)
+			{
+				less.add(i);
+			}
+			else if(i.compareTo(pivot)>0)
+			{
+				more.add(i);
+			}
+			else 
+				pivotList.add(i);
+		}
+		
+		less=Sort(pivotList);
+		more=Sort(more);
+		
+		less.addAll(pivotList);
+		less.addAll(more);
+		return less;
 	}
-
 }

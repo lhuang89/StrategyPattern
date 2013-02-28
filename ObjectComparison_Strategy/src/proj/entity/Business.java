@@ -1,12 +1,15 @@
 package proj.entity;
 
-public class Business{
+import java.util.Comparator;
+
+public class Business implements Comparable<Business>{
 private String businessName;
 private String address;
 private String city;
 private String zip;
 private String phoneNumber;
 private String description;
+private Comparator<Business> comparator;
 
 public String getBusinessName() {
 	return businessName;
@@ -45,11 +48,20 @@ public void setDescription(String description) {
 	this.description = description;
 }
 
+public void setComparator(Comparator<Business> comp)
+{
+	this.comparator=comp;
+}
+
 @Override
 public String toString()
 {
 	return "Business name: "+this.businessName+" Address: "+this.address+" City: "+this.city
 			+" Zip Code: "+this.zip+" Phone Number: "+this.phoneNumber+"\nDescription:\n"+this.description;
+}
+@Override
+public int compareTo(Business b) {
+	return this.comparator.compare(this, b);
 }
 
 }
