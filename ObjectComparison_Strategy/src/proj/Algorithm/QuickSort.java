@@ -33,7 +33,7 @@ public class QuickSort<T> implements SortAlgorithm<T> {
 				pivotList.add(i);
 		}
 		
-		less=Sort(pivotList);
+		less=Sort(less);
 		more=Sort(more);
 		
 		less.addAll(pivotList);

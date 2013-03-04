@@ -11,18 +11,7 @@ public class CompareByZip implements Comparator<Business> {
 		String zip1=b1.getZip();
 		String zip2=b2.getZip();
 		
-		if(zip1.compareToIgnoreCase(zip2)==0)
-		{
-			return 0;
-		}
-		else if (zip1.compareToIgnoreCase(zip2)<0)
-		{
-			return -1;
-		}
-		else
-		{
-			return 1;
-		}
+		return zip1.compareToIgnoreCase(zip2);
 	}
 
 }

@@ -9,13 +9,13 @@ private String city;
 private String zip;
 private String phoneNumber;
 private String description;
-private Comparator<Business> comparator;
+private static Comparator<Business> comparator;
 
 public String getBusinessName() {
-	return businessName;
+	return this.businessName;
 }
-public void setBusinessName(String businessName) {
-	this.businessName = businessName;
+public void setBusinessName(String bName) {
+	this.businessName = bName;
 }
 public String getAddress() {
 	return address;
@@ -48,20 +48,20 @@ public void setDescription(String description) {
 	this.description = description;
 }
 
-public void setComparator(Comparator<Business> comp)
+public static void setComparator(Comparator<Business> comp)
 {
-	this.comparator=comp;
+	Business.comparator=comp;
 }
 
 @Override
 public String toString()
 {
-	return "Business name: "+this.businessName+" Address: "+this.address+" City: "+this.city
-			+" Zip Code: "+this.zip+" Phone Number: "+this.phoneNumber+"\nDescription:\n"+this.description;
+	return "Business name: "+this.businessName+"\tAddress: "+this.address+"\tCity: "+this.city
+			+"\tZip Code: "+this.zip+"\tPhone Number: "+this.phoneNumber+"\tDescription:\n"+this.description+"\n";
 }
 @Override
 public int compareTo(Business b) {
-	return this.comparator.compare(this, b);
+	return Business.comparator.compare(this, b);
 }
 
 }

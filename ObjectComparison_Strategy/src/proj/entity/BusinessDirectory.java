@@ -9,21 +9,23 @@ public class BusinessDirectory {
 private ArrayList<Business> business_dir;
 private SortAlgorithm<Business> sort_strategy;
 
+public BusinessDirectory()
+{
+	business_dir=new ArrayList<Business>();
+}
 public void AddBusiness(Business business)
 {
-	business_dir.add(business);
+	this.business_dir.add(business);
 }
 
 public void RemoveBusiness(Business business)
 {
-	business_dir.remove(business);
+	this.business_dir.remove(business);
 }
 
 public void ListAllBusiness()
 {
-	java.util.Iterator<Business> i =business_dir.iterator();
-	
-	while(i.hasNext())
+	for (Business i:this.business_dir)
 	{
 		System.out.println(i.toString());
 	}
@@ -36,6 +38,11 @@ public void setSortStrategy(SortAlgorithm<Business> strategy)
 
 public void Sort(Comparator<Business> comparator)
 {
-	this.sort_strategy.Sort(business_dir);
+	this.sort_strategy.Sort(this.business_dir);
+}
+
+public ArrayList<Business> getBusinessDirectory()
+{
+	return this.business_dir;
 }
 }

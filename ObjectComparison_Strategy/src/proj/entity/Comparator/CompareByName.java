@@ -7,19 +7,8 @@ public class CompareByName implements Comparator<Business> {
 	public int compare (Business b1, Business b2)
 	{
 		String name1=b1.getBusinessName();
-		String name2=b1.getBusinessName();
+		String name2=b2.getBusinessName();
 		
-		if(name1.compareToIgnoreCase(name2)==0)
-		{
-			return 0;
-		}
-		else if (name1.compareToIgnoreCase(name2)<0)
-		{
-			return -1;
-		}
-		else
-		{
-			return 1;
-		}
+		return name1.compareToIgnoreCase(name2);
 	}
 }

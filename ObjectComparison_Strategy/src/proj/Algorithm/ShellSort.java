@@ -1,11 +1,14 @@
 package proj.Algorithm;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ShellSort<T> implements SortAlgorithm<T> {
 	@SuppressWarnings("hiding")
 	@Override
-	public <T extends Comparable<? super T>> List<T> Sort(List<T> array) {
+	public <T extends Comparable<? super T>> List<T> Sort(List<T> array1) {
+		List<T> array=new ArrayList<T>();
+		array.addAll(array1);
 		int increment=array.size()/2;
 		
 		while (increment>0)

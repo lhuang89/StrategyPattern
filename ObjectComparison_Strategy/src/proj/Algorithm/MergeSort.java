@@ -66,8 +66,8 @@ public class MergeSort<T> implements SortAlgorithm<T> {
     				{
     					result.add(it1.next());
     				}
-    			}
-    			break;
+    				break;
+    			}    			
     		}   		
     	}
     	return result;
